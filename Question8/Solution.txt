@@ -1,0 +1,2 @@
+SELECT * FROM employee
+WHERE emp_age < 30 AND emp_name LIKE 'S%';

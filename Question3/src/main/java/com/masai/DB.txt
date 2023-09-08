@@ -1,0 +1,23 @@
+mysql> create database goldilocksdb;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> use goldilocksdb;
+Database changed
+mysql> create table test(empId int primary key, empName varchar(200), empAge int);
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> select * from test;
+Empty set (0.01 sec)
+
+mysql> insert into test values("Akshay", 27);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into test values(1,"Akshay", 27);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from test;
++-------+---------+--------+
+| empId | empName | empAge |
++-------+---------+--------+
+|     1 | Akshay  |     27 |
++-------+---------+--------+
+1 row in set (0.00 sec)
